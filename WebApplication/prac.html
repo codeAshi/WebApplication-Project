@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Example</title>
+    <style>
+        .active { display: block; }
+        .search-form, .shopping-cart, .login-form { display: none; }
+    </style>
+</head>
+<body>
+    <button id="search-btn">Search</button>
+    <button id="cart-btn">Cart</button>
+    <button id="login-btn">Login</button>
+
+    <div class="search-form">Search Form Content</div>
+    <div class="shopping-cart">Shopping Cart Content</div>
+    <div class="login-form">Login Form Content</div>
+
+    <script>
+        document.getElementById('search-btn').onclick = function() {
+            toggleActive('.search-form');
+        };
+
+        document.getElementById('cart-btn').onclick = function() {
+            toggleActive('.shopping-cart');
+        };
+
+        document.getElementById('login-btn').onclick = function() {
+            toggleActive('.login-form');
+        };
+
+        window.onscroll = function() {
+            document.querySelectorAll('.search-form, .shopping-cart, .login-form')
+                .forEach(element => element.classList.remove('active'));
+        };
+
+        function toggleActive(selector) {
+            document.querySelector(selector).classList.toggle('active');
+            document.querySelectorAll('.search-form, .shopping-cart, .login-form')
+                .forEach(element => {
+                    if (!element.matches(selector)) {
+                        element.classList.remove('active');
+                    }
+                });
+        }
+    </script>
+</body>
+</html>
