@@ -1,5 +1,5 @@
-🛒 Grocery Web Application
-A simple and user-friendly web application for browsing, managing, and purchasing groceries online.
+__🛒 Grocery Web Application
+A simple and user-friendly web application for browsing, managing, and purchasing groceries online.__
 
 🚀 Features
 ✅ User Authentication (Sign Up / Log In / Log Out)
